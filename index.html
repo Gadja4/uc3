@@ -108,14 +108,13 @@
 
         .lcd-screen {
             background-color: #a3c644;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
-            border: 6px solid #1f2937;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+            border: 4px solid #1f2937;
         }
     </style>
 </head>
 <body class="antialiased h-screen flex flex-col">
 
-    <!-- NAVBAR ELEGANT & RESPONSIVE -->
     <nav id="main-nav" class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm h-16 flex items-center page-hidden transition-all duration-300">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
             
@@ -129,13 +128,12 @@
             <div class="flex bg-pillBg rounded-full p-1 items-center overflow-x-auto hide-scrollbar max-w-[60vw] md:max-w-none">
                 <button onclick="openPage('p1')" id="tab-p1" class="px-3 md:px-5 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all whitespace-nowrap">1. Senzor</button>
                 <button onclick="openPage('p2')" id="tab-p2" class="px-3 md:px-5 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all whitespace-nowrap">2. Analogic</button>
-                <button onclick="openPage('p3')" id="tab-p3" class="px-3 md:px-5 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all whitespace-nowrap">3. Digital I2C</button>
+                <button onclick="openPage('p3')" id="tab-p3" class="px-3 md:px-5 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all whitespace-nowrap">3. I2C</button>
                 <button onclick="openPage('p4')" id="tab-p4" class="px-3 md:px-5 py-1.5 rounded-full text-xs md:text-sm font-semibold transition-all whitespace-nowrap">4. Afișaj LCD</button>
             </div>
         </div>
     </nav>
 
-    <!-- LANDING PAGE SPECTACULOS -->
     <div id="landing-page" class="fixed inset-0 z-[100] bg-aurora flex flex-col items-center justify-center p-4 sm:p-6 transition-all duration-500 ease-in-out overflow-y-auto">
         
         <div class="absolute inset-0 overflow-hidden pointer-events-none fixed">
@@ -189,22 +187,22 @@
                 <div class="w-12 h-12 rounded-full bg-brandPurple/20 border border-brandPurple/30 flex items-center justify-center mb-4 group-hover:bg-brandPurple transition-colors duration-300">
                     <span class="text-xl font-bold text-brandPurple group-hover:text-white transition-colors duration-300">3</span>
                 </div>
-                <h2 class="text-xl font-bold text-white mb-2 font-classic">Alternativa Digitală I2C</h2>
+                <h2 class="text-xl font-bold text-white mb-2 font-classic">Senzorul Digital I2C</h2>
                 <p class="text-gray-300 text-sm leading-relaxed mb-4 flex-grow">
-                    Soluția modernă folosind un senzor digital inteligent. Prezentarea protocolului și schema electrică.
+                    Implementare modernă cu MCP9801 și MCU 80C51. Protocolul I2C explicat simplu și flux de date.
                 </p>
                 <span class="text-brandPurple text-xs font-bold uppercase tracking-wider flex items-center mt-auto">
                     Deschide <svg class="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </span>
             </button>
 
-            <button onclick="openPage('p4')" class="glass-card p-6 rounded-3xl text-left group animate-on-show delay-400 flex flex-col h-full border-brandTeal/30">
+            <button onclick="openPage('p4')" class="glass-card p-6 rounded-3xl text-left group animate-on-show delay-400 flex flex-col h-full border-brandTeal/30 hover:border-brandTeal/80">
                 <div class="w-12 h-12 rounded-full bg-brandTeal/20 border border-brandTeal/30 flex items-center justify-center mb-4 group-hover:bg-brandTeal transition-colors duration-300">
                     <span class="text-xl font-bold text-brandTeal group-hover:text-white transition-colors duration-300">4</span>
                 </div>
                 <h2 class="text-xl font-bold text-white mb-2 font-classic">Afișajul LCD</h2>
                 <p class="text-gray-300 text-sm leading-relaxed mb-4 flex-grow">
-                    Interfața vizuală. Alegerea ecranului, conectarea simplă a pinilor și afișarea textului "Gadja 2131".
+                    Interfața vizuală. Alegerea ecranului, conectarea pinilor și afișarea textului pe LCD.
                 </p>
                 <span class="text-brandTeal text-xs font-bold uppercase tracking-wider flex items-center mt-auto">
                     Deschide <svg class="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -215,10 +213,9 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- CONȚINUT ETAPA 1 (Informație neatinsă)     -->
+    <!-- CONȚINUT ETAPA 1                           -->
     <!-- ========================================== -->
     <main id="page-p1" class="pt-24 pb-20 flex-1 max-w-7xl mx-auto px-4 sm:px-6 space-y-16 page-hidden w-full">
-        
         <section class="bg-brandBg rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-sm animate-on-show">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-classic">Etapa 1. Analiza și Selecția Senzorului de Temperatură</h1>
             <p class="text-gray-700 mb-6 max-w-3xl">
@@ -390,7 +387,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
                 <div class="lg:col-span-2 space-y-4">
                     <h3 class="text-xl font-semibold text-gray-800">Principiul de funcționare</h3>
-                    <p class="text-gray-600">Senzorii digitali reprezintă sisteme complete care integrează atât elementul sensibil pe siliciu, cât și un Convertor Analog-Digital (ADC) în aceeași capsulă. Nu generează tensiuni variabile spre exterior, ci comunică valoarea temperaturii sub formă de pachete de date (biți) utilizând protocoale standard precum I2C, SPI sau 1-Wire. Sunt imuni la interferențe electromagnetice pe cabluri.</p>
+                    <p class="text-gray-600">Senzorii digitali reprezintă sisteme complete care integrează atât elementul sensibil pe siliciu, cât și un Convertor Analog-Digital (ADC) în aceeași capsulă. Nu generează tensiuni variabile spre exterior, ci comunică valoarea temperaturii sub formă de pachete de date (biți) utilizând protocoale standard precum I2C, SPI sau 1-Wire.</p>
                 </div>
                 <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 flex flex-col items-center justify-center overflow-x-auto">
                     <span class="block text-xs font-bold text-gray-500 uppercase w-full mb-4 text-center">Conexiune tipică (ex. I2C)</span>
@@ -411,7 +408,6 @@
             </div>
         </section>
 
-        <!-- Tabel 25 Senzori -->
         <section class="mt-16 pt-10 border-t border-gray-200 animate-on-show">
             <h2 class="text-2xl font-bold text-gray-900 mb-6 font-classic">Analiza Centralizată: Prezentarea celor 25 de Senzori</h2>
             <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm bg-white">
@@ -432,12 +428,11 @@
             </div>
         </section>
 
-        <!-- Concluzie Etapa 1 -->
         <section class="mt-12 bg-gray-900 rounded-3xl p-6 sm:p-10 text-white shadow-2xl animate-on-show border border-gray-800 relative overflow-hidden">
             <div class="absolute -right-10 -top-10 w-40 h-40 bg-brandOrange/20 blur-3xl rounded-full pointer-events-none"></div>
             <div class="relative z-10">
                 <h4 class="text-2xl md:text-3xl font-bold text-brandOrange mb-6 font-classic">Decizia Finală: De ce alegem LM35?</h4>
-                <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">În urma analizei, s-a stabilit că <strong>LM35</strong> (Semiconductor Liniar) respectă toate cerințele impuse: are o eroare de doar ±0.5°C (încadrându-se perfect în intervalul 0.2 - 0.5), acoperă termic gama 5 - 40°C, oferă un semnal perfect liniar care nu solicită microcontrolerul cu ecuații matematice grele și, foarte important, are un model fiabil nativ în simulatorul Proteus. Este componenta optimă pentru continuarea etapei de condiționare analogică.</p>
+                <p class="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">În urma analizei, s-a stabilit că <strong>LM35</strong> (Semiconductor Liniar) respectă toate cerințele impuse: are o eroare de doar ±0.5°C (încadrându-se perfect în intervalul 0.2 - 0.5), acoperă termic gama 5 - 40°C, oferă un semnal perfect liniar care nu solicită microcontrolerul cu ecuații matematice grele și are un model fiabil nativ în simulatorul Proteus.</p>
                 <button onclick="openPage('p2')" class="btn-hover-fx bg-brandOrange text-white font-bold py-3 px-6 md:px-8 rounded-full transition shadow-lg mt-2 inline-flex items-center text-sm md:text-base">
                     Continuă cu Etapa 2 (Circuitul)
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -450,6 +445,7 @@
     <!-- CONȚINUT ETAPA 2 (Analogic)                -->
     <!-- ========================================== -->
     <main id="page-p2" class="pt-24 pb-20 flex-1 max-w-7xl mx-auto px-4 sm:px-6 space-y-16 page-hidden w-full">
+        
         <section class="bg-blue-50/40 rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-sm animate-on-show">
             <div class="inline-block px-4 py-1 rounded-full bg-brandBlue text-white font-bold text-xs uppercase mb-4 tracking-widest shadow-md">Etapa 2</div>
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-classic">Proiectarea Circuitului de Condiționare a Semnalului</h1>
@@ -458,7 +454,6 @@
             </p>
         </section>
 
-        <!-- Date de proiectare, Componente, Calcul, Simulator... -->
         <section class="animate-on-show delay-100">
             <div class="border-b-2 border-brandBlue pb-2 mb-6">
                 <h2 class="text-2xl font-bold text-gray-900 font-classic">1. Date de proiectare și constrângeri</h2>
@@ -544,6 +539,7 @@
                     <!-- Tensiuni -->
                     <div class="space-y-4 font-mono text-sm bg-white p-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col justify-center">
                         <div class="flex justify-between items-center"><span class="text-gray-500">Ieșire Senzor (V_in):</span><span id="sim-vin-val" class="font-bold text-blue-600 text-lg">0.225 V</span></div>
+                        <div class="flex justify-between items-center"><span class="text-gray-500">Offset Fix:</span><span class="font-bold text-gray-600 text-lg">0.050 V</span></div>
                         <div class="flex justify-between items-center bg-red-50 p-2 rounded border border-red-100 mt-2"><span class="text-gray-800 font-bold">Ieșire Op-Amp (V_out):</span><span id="sim-vout-val" class="font-bold text-red-600 text-xl">2.51 V</span></div>
                     </div>
                     <!-- Leds ADC -->
@@ -561,6 +557,8 @@
                         </div>
                         <div class="flex flex-wrap justify-center gap-2 sm:gap-4 font-mono text-sm text-green-400 bg-gray-950 px-4 py-3 rounded-xl border border-gray-700">
                             <div>BIN: <span id="sim-bin-val" class="font-bold text-white">10000000</span></div>
+                            <div class="text-gray-600 hidden sm:block">|</div>
+                            <div>HEX: <span id="sim-hex-val" class="font-bold text-brandOrange">0x80</span></div>
                         </div>
                     </div>
                 </div>
@@ -575,179 +573,61 @@
     </main>
 
     <!-- ========================================== -->
-    <!-- CONȚINUT ETAPA 3 (Digital / I2C)           -->
+    <!-- CONȚINUT ETAPA 3 (I2C)                     -->
     <!-- ========================================== -->
     <main id="page-p3" class="pt-24 pb-20 flex-1 max-w-7xl mx-auto px-4 sm:px-6 space-y-16 page-hidden w-full">
-        
         <section class="bg-brandPurple/10 rounded-3xl p-6 sm:p-8 border border-brandPurple/20 shadow-sm animate-on-show">
             <div class="inline-block px-4 py-1 rounded-full bg-brandPurple text-white font-bold text-xs uppercase mb-4 tracking-widest shadow-md">Etapa 3</div>
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-classic">Alternativa Digitală: Protocolul I2C</h1>
             <p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl">
-                Pe lângă varianta clasică pe care am făcut-o până acum (senzorul analogic LM35 + convertorul ADC0808 separat), putem folosi o soluție mult mai modernă: un senzor digital inteligent. Pentru a exemplifica, am analizat senzorul MCP9801, conectat la un microcontroler 80C51.
+                Pe lângă varianta clasică prezentată anterior (senzor analogic LM35 + convertor separat ADC0808), o metodă eficientă de monitorizare a temperaturii este utilizarea <strong>senzorilor digitali integrați</strong>. Pentru a exemplifica, am analizat soluția bazată pe senzorul MCP9801, interfațat cu un microcontroler 80C51.
             </p>
         </section>
         
-        <!-- 1. Diferenta -->
         <section class="animate-on-show delay-100">
             <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 font-classic">Care e diferența mare?</h3>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 font-classic">Diferența față de varianta analogică</h3>
                 <p class="text-gray-600 mb-4 leading-relaxed text-sm md:text-base">
-                    Diferența mare este că senzorul digital (cum e MCP9801) are deja convertorul încorporat direct în cipul lui. 
+                    Spre deosebire de senzorul analogic care scoate o tensiune pe care noi trebuie să o amplificăm și să o convertim, senzorul digital (MCP9801) are convertorul ADC integrat direct în capsula sa. 
                 </p>
                 <div class="bg-brandPurple/5 border-l-4 border-brandPurple p-4 rounded text-gray-700 text-sm md:text-base">
-                    El citește temperatura și o trimite direct sub formă de date (biți de 0 și 1) către microcontroler. Așa scăpăm de tot acel circuit complicat cu amplificatoare operaționale și divizoare de tensiune prezentat la Etapa 2.
+                    Acesta măsoară temperatura și o transmite sub formă de date (1 și 0) direct către microcontroler. Se elimină astfel nevoia unui circuit cu amplificatoare și rezistențe pe placa de bază.
                 </div>
             </div>
         </section>
 
-        <!-- 2. Prezentare I2C -->
         <section class="animate-on-show delay-200">
             <div class="border-b-2 border-brandPurple pb-2 mb-6">
-                <h2 class="text-2xl font-bold text-gray-900 font-classic">Cum funcționează Protocolul I2C?</h2>
+                <h2 class="text-2xl font-bold text-gray-900 font-classic">Prezentarea Protocolului I2C</h2>
             </div>
-            <p class="text-gray-600 mb-6 text-sm md:text-base">Pentru ca senzorul și microcontrolerul să "vorbească" între ei, se folosesc <strong>doar două fire</strong>:</p>
+            <p class="text-gray-600 mb-6 text-sm md:text-base">Protocolul I2C permite comunicarea folosind doar <strong>două fire</strong>:</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
                     <div class="flex items-center mb-3">
                         <div class="w-10 h-10 rounded bg-blue-100 text-blue-600 flex items-center justify-center font-bold font-mono mr-4">SDA</div>
                         <h4 class="font-bold text-gray-900 text-lg">Serial Data</h4>
                     </div>
-                    <p class="text-sm text-gray-600">Aceasta este linia pe care merg efectiv datele cu temperatura măsurată.</p>
+                    <p class="text-sm text-gray-600">Este firul pe care circulă efectiv datele transmise.</p>
                 </div>
                 <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
                     <div class="flex items-center mb-3">
                         <div class="w-10 h-10 rounded bg-green-100 text-green-600 flex items-center justify-center font-bold font-mono mr-4">SCL</div>
                         <h4 class="font-bold text-gray-900 text-lg">Serial Clock</h4>
                     </div>
-                    <p class="text-sm text-gray-600">Acesta este firul de ceas, care dă ritmul și sincronizează cele două piese.</p>
+                    <p class="text-sm text-gray-600">Este firul de ceas, care sincronizează comunicarea între cele două piese.</p>
                 </div>
             </div>
-            <p class="text-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm md:text-base">
-                <strong>Regula e simplă:</strong> Microcontrolerul dă tonul pe firul de ceas (SCL) și cere date, iar senzorul îl ascultă și îi răspunde pe firul de date (SDA).
-            </p>
-        </section>
-        
-        <!-- 3. Hardware I2C -->
-        <section class="animate-on-show">
-            <div class="border-b-2 border-brandPurple pb-2 mb-6">
-                <h2 class="text-2xl font-bold text-gray-900 font-classic">Schema Electrică (Simplificată)</h2>
-            </div>
-            
-            <div class="bg-white border border-gray-200 p-6 md:p-10 rounded-2xl shadow-sm flex flex-col items-center overflow-x-auto mb-8">
-                <div class="flex items-center min-w-[500px] h-64 font-mono text-xs relative">
-                    <!-- MCU -->
-                    <div class="absolute right-0 top-12 border-2 border-gray-800 bg-gray-50 p-4 w-32 h-32 rounded flex flex-col items-center justify-center shadow-sm z-10">
-                        <span class="font-bold text-lg">80C51</span>
-                        <span class="text-gray-500 mb-2">Microcontroler</span>
-                        <div class="absolute left-[-2px] top-8 w-2 h-0.5 bg-gray-800"></div>
-                        <span class="absolute left-3 top-6 text-[10px]">P1.0</span>
-                        <div class="absolute left-[-2px] top-16 w-2 h-0.5 bg-gray-800"></div>
-                        <span class="absolute left-3 top-14 text-[10px]">P1.1</span>
-                    </div>
-
-                    <!-- Sensor -->
-                    <div class="absolute left-0 top-12 border-2 border-brandPurple bg-purple-50 p-4 w-32 h-32 rounded flex flex-col items-center justify-center shadow-sm z-10">
-                        <span class="font-bold text-brandPurple text-lg">MCP9801</span>
-                        <span class="text-gray-500 mb-2">Senzor I2C</span>
-                        <div class="absolute right-[-2px] top-8 w-2 h-0.5 bg-gray-800"></div>
-                        <span class="absolute right-3 top-6 text-[10px]">SDA</span>
-                        <div class="absolute right-[-2px] top-16 w-2 h-0.5 bg-gray-800"></div>
-                        <span class="absolute right-3 top-14 text-[10px]">SCL</span>
-                        
-                        <div class="absolute bottom-[-2px] left-4 w-0.5 h-4 bg-gray-800"></div>
-                        <span class="absolute bottom-4 left-2 text-[10px]">A0-A2</span>
-                    </div>
-
-                    <!-- GND -->
-                    <div class="absolute left-[14px] bottom-6 w-4 h-0.5 bg-gray-800"></div>
-                    <div class="absolute left-[18px] bottom-[22px] w-2 h-0.5 bg-gray-800"></div>
-                    <span class="absolute left-7 bottom-[20px] text-[10px] font-bold">GND</span>
-
-                    <!-- Fire -->
-                    <div class="absolute left-32 top-[4.5rem] w-[180px] h-0.5 bg-blue-500 z-0"></div>
-                    <div class="absolute left-32 top-[6.5rem] w-[180px] h-0.5 bg-green-500 z-0"></div>
-
-                    <!-- Pullup 1 -->
-                    <div class="absolute left-[170px] top-0 flex flex-col items-center">
-                        <span class="text-[10px] text-red-600 font-bold mb-1">+5V</span>
-                        <div class="w-0.5 h-4 bg-gray-800"></div>
-                        <div class="w-4 h-8 border border-gray-800 bg-white flex items-center justify-center relative">
-                            <span class="absolute left-6 text-[10px] font-bold text-gray-500">R1 4.7k</span>
-                        </div>
-                        <div class="w-0.5 h-[23px] bg-gray-800"></div>
-                        <div class="w-2 h-2 rounded-full bg-gray-900 -mt-1 z-20"></div>
-                    </div>
-
-                    <!-- Pullup 2 -->
-                    <div class="absolute left-[240px] top-0 flex flex-col items-center">
-                        <span class="text-[10px] text-red-600 font-bold mb-1">+5V</span>
-                        <div class="w-0.5 h-4 bg-gray-800"></div>
-                        <div class="w-4 h-8 border border-gray-800 bg-white flex items-center justify-center relative">
-                            <span class="absolute left-6 text-[10px] font-bold text-gray-500">R2 4.7k</span>
-                        </div>
-                        <div class="w-0.5 h-[55px] bg-gray-800"></div>
-                        <div class="w-2 h-2 rounded-full bg-gray-900 -mt-1 z-20"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <p class="text-gray-600 mb-4 text-sm md:text-base">Dacă ne uităm pe schemă, conexiunea e foarte simplă. Avem nevoie doar de două rezistențe (Pull-Up de 4.7kΩ) legate la sursa de 5V. Ele țin firele pe starea logică "1" (High) când nu transmite nimeni. </p>
-            <p class="text-gray-600 text-sm md:text-base">Pinii de adresă ai senzorului (A0, A1, A2) i-am legat direct la masă (GND) ca să aibă o adresă hardware fixă, să știe microcontrolerul exact cu cine "vorbește".</p>
-        </section>
-
-        <!-- 4. Debugging I2C -->
-        <section class="animate-on-show">
-            <div class="border-b-2 border-brandPurple pb-2 mb-6">
-                <h2 class="text-2xl font-bold text-gray-900 font-classic">Testarea și citirea datelor</h2>
-            </div>
-            <p class="text-gray-600 mb-6 text-sm md:text-base">Pentru a citi temperatura, microcontrolerul parcurge niște pași pe care i-am verificat în Proteus cu instrumentul <strong>I2C Debugger</strong>:</p>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div class="space-y-3">
-                    <div class="flex items-center p-3 bg-white border border-gray-200 rounded shadow-sm">
-                        <span class="w-6 h-6 rounded-full bg-brandPurple text-white flex items-center justify-center text-xs font-bold mr-3">1</span>
-                        <span class="text-sm text-gray-700">Trimite comanda de <strong>START</strong>.</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-white border border-gray-200 rounded shadow-sm">
-                        <span class="w-6 h-6 rounded-full bg-brandPurple text-white flex items-center justify-center text-xs font-bold mr-3">2</span>
-                        <span class="text-sm text-gray-700">Strigă senzorul pe adresa lui de <strong>Scriere</strong>.</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-white border border-gray-200 rounded shadow-sm">
-                        <span class="w-6 h-6 rounded-full bg-brandPurple text-white flex items-center justify-center text-xs font-bold mr-3">3</span>
-                        <span class="text-sm text-gray-700">Îi cere să citească temperatura din memorie.</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-white border border-gray-200 rounded shadow-sm">
-                        <span class="w-6 h-6 rounded-full bg-brandPurple text-white flex items-center justify-center text-xs font-bold mr-3">4</span>
-                        <span class="text-sm text-gray-700">Senzorul îi trimite <strong>datele înapoi</strong>.</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-white border border-gray-200 rounded shadow-sm">
-                        <span class="w-6 h-6 rounded-full bg-brandPurple text-white flex items-center justify-center text-xs font-bold mr-3">5</span>
-                        <span class="text-sm text-gray-700">Microcontrolerul confirmă primirea și dă comanda de <strong>STOP</strong>.</span>
-                    </div>
-                </div>
-
-                <div class="bg-gray-900 rounded-xl p-4 shadow-xl border border-gray-700 font-mono text-xs md:text-sm text-green-400 overflow-x-auto">
-                    <div class="text-gray-500 mb-2 border-b border-gray-700 pb-2">Proteus I2C Debugger Log</div>
-                    <div class="flex items-center hover:bg-gray-800 p-1"><span class="text-blue-400 mr-2">▶</span> 59.925ms &nbsp;&nbsp;&nbsp;<span class="text-yellow-400">S</span> &nbsp;90 &nbsp;<span class="text-green-500">A</span> &nbsp;00 &nbsp;<span class="text-green-500">A</span> &nbsp;<span class="text-yellow-400">Sr</span> 91 &nbsp;<span class="text-green-500">A</span> &nbsp;<span class="text-white">28</span> &nbsp;<span class="text-red-400">N</span> &nbsp;<span class="text-yellow-400">P</span></div>
-                    <div class="flex items-center hover:bg-gray-800 p-1"><span class="text-blue-400 mr-2">▶</span> 118.000ms &nbsp;&nbsp;<span class="text-yellow-400">S</span> &nbsp;90 &nbsp;<span class="text-green-500">A</span> &nbsp;00 &nbsp;<span class="text-green-500">A</span> &nbsp;<span class="text-yellow-400">Sr</span> 91 &nbsp;<span class="text-green-500">A</span> &nbsp;<span class="text-white">28</span> &nbsp;<span class="text-red-400">N</span> &nbsp;<span class="text-yellow-400">P</span></div>
-                    <div class="mt-4 pt-2 border-t border-gray-700 text-gray-400 text-[10px]">
-                        Așa cum vedem pe log (S=Start, A=Confirmat, P=Stop, 28=Datele), transferul s-a făcut curat, fără probleme hardware.
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
+            <div class="mt-8 text-center">
                 <button onclick="openPage('p4')" class="btn-hover-fx bg-brandTeal text-white font-bold py-3 px-6 md:px-8 rounded-full transition shadow-lg mt-2 inline-flex items-center text-sm md:text-base">
-                    Spre Etapa 4 (Afișajul LCD)
+                    Spre Final: Etapa 4 (Afișajul LCD)
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </button>
             </div>
         </section>
-
     </main>
 
     <!-- ========================================== -->
-    <!-- NOU: CONȚINUT ETAPA 4 (AFIȘAJUL LCD)       -->
+    <!-- CONȚINUT ETAPA 4 (AFIȘAJUL LCD)            -->
     <!-- ========================================== -->
     <main id="page-p4" class="pt-24 pb-20 flex-1 max-w-7xl mx-auto px-4 sm:px-6 space-y-16 page-hidden w-full">
         
@@ -755,9 +635,10 @@
             <div class="inline-block px-4 py-1 rounded-full bg-brandTeal text-white font-bold text-xs uppercase mb-4 tracking-widest shadow-md">Etapa 4</div>
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-classic">Alegerea și Implementarea Ecranului de Afișaj</h1>
             <p class="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl">
-                Un ecran este interfața prin care noi, oamenii, vedem datele din microcontroler. Aici explic de ce am ales un LCD clasic, cum am conectat pinii și cum am trimis datele pas cu pas pentru a scrie textul dorit pe el.
+                Un ecran este interfața vizuală prin care noi, oamenii, vedem datele din microcontroler. Aici explic de ce am ales un LCD clasic, cum am conectat pinii și cum am trimis datele pas cu pas pentru a scrie textul dorit pe el.
             </p>
         </section>
+
 
         <!-- 1. Alegerea Ecranului -->
         <section class="animate-on-show delay-100">
@@ -767,13 +648,11 @@
             <p class="text-gray-600 mb-6 text-sm md:text-base">Înainte să alegem ecranul, ne-am uitat la 3 tehnologii comune. Scopul nostru a fost simplu: să putem afișa clar un text (numele "Gadja") și un număr ("2131").</p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <!-- 7 Segmente -->
                 <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm text-center flex flex-col items-center">
                     <div class="mb-4"><span class="bg-black text-red-500 font-mono text-2xl px-2 py-1 rounded">8.8.</span></div>
                     <h4 class="font-bold text-gray-900 mb-2">Afișajul cu 7-Segmente</h4>
                     <p class="text-sm text-gray-600">Ieftin și simplu, dar e limitat strict la cifre. <strong>Nu e bun</strong> pentru noi, pentru că nu putem scrie litere clare pe el.</p>
                 </div>
-                <!-- OLED -->
                 <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm text-center flex flex-col items-center">
                     <div class="mb-4 w-16 h-8 bg-gray-900 rounded border-2 border-gray-700 flex items-center justify-center">
                         <span class="text-[8px] text-blue-400 font-mono">Pixel Art</span>
@@ -781,9 +660,8 @@
                     <h4 class="font-bold text-gray-900 mb-2">Ecranele OLED/TFT</h4>
                     <p class="text-sm text-gray-600">Arată superb și au culori, dar sunt scumpe și programarea lor este extrem de complicată. <strong>Prea complex</strong> pentru nevoia noastră.</p>
                 </div>
-                <!-- LCD Alfanumeric -->
                 <div class="bg-teal-50 border border-brandTeal p-6 rounded-xl shadow-sm text-center flex flex-col items-center relative">
-                    <span class="absolute -top-3 bg-brandTeal text-white text-[10px] font-bold px-2 py-1 rounded">Ales pentru Proiect</span>
+                    <span class="absolute -top-3 bg-brandTeal text-white text-[10px] font-bold px-2 py-1 rounded shadow-sm">Ales pentru Proiect</span>
                     <div class="mb-4 bg-[#a3c644] border-2 border-gray-800 p-1 rounded shadow-inner">
                         <span class="text-[#1a1a1a] font-lcd text-sm font-bold">TEXT + 123</span>
                     </div>
@@ -798,42 +676,16 @@
             <div class="border-b-2 border-brandTeal pb-2 mb-6">
                 <h2 class="text-2xl font-bold text-gray-900 font-classic">Cum am conectat pinii LCD-ului?</h2>
             </div>
-            <p class="text-gray-600 mb-6 text-sm md:text-base">Ecranul are 3 pini importanți de comandă de care trebuie să știm ca să-l putem folosi corect:</p>
-
-            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden max-w-3xl mx-auto mb-8">
-                <div class="flex items-center p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                    <div class="w-12 h-12 bg-gray-100 rounded flex items-center justify-center font-bold text-gray-800 mr-4 font-mono">RS</div>
-                    <div>
-                        <h4 class="font-bold text-gray-900">Register Select</h4>
-                        <p class="text-sm text-gray-600">Dacă e <strong>0</strong>, trimitem o <em>Comandă</em> (ex: mută cursorul). Dacă e <strong>1</strong>, trimitem <em>Litere</em> pe ecran.</p>
-                    </div>
-                </div>
-                <div class="flex items-center p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                    <div class="w-12 h-12 bg-gray-100 rounded flex items-center justify-center font-bold text-gray-800 mr-4 font-mono">RW</div>
-                    <div>
-                        <h4 class="font-bold text-gray-900">Read/Write</h4>
-                        <p class="text-sm text-gray-600">L-am pus la masă (GND/0) pentru că noi doar vrem să scriem text, nu avem de ce să citim din el.</p>
-                    </div>
-                </div>
-                <div class="flex items-center p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                    <div class="w-12 h-12 bg-gray-100 rounded flex items-center justify-center font-bold text-brandTeal mr-4 font-mono">E</div>
-                    <div>
-                        <h4 class="font-bold text-gray-900">Pinul Enable (Validare)</h4>
-                        <p class="text-sm text-gray-600">Ecranul citește informațiile doar când dăm un scurt impuls pe el (de la 1 înapoi la 0). Ca un buton de Enter.</p>
-                    </div>
-                </div>
-                <div class="flex items-center p-4 hover:bg-gray-50 transition-colors">
-                    <div class="w-12 h-12 bg-blue-50 rounded flex items-center justify-center font-bold text-blue-600 mr-4 font-mono text-xs">D0-D7</div>
-                    <div>
-                        <h4 class="font-bold text-gray-900">Firele de Date</h4>
-                        <p class="text-sm text-gray-600">Pe astea 8 fire trimitem efectiv codurile în binar (cu 1 și 0) pentru fiecare literă.</p>
-                    </div>
-                </div>
+            <p class="text-gray-600 mb-6 text-sm md:text-base">Pentru a controla ecranul manual în Proteus, am legat pinii de comandă și de date la butoane logice (Logic States). Ordinea pinilor pe care o vom folosi de la stânga la dreapta este următoarea:</p>
+            
+            <div class="bg-teal-50 border-l-4 border-brandTeal p-4 rounded text-gray-800 font-mono text-sm md:text-base mb-6 font-bold text-center shadow-sm">
+                RS / RW / E / D0 (LSB) / D1 / D2 / D3 / D4 / D5 / D6 / D7 (MSB)
             </div>
             
-            <div class="bg-gray-100 rounded-xl aspect-[21/9] max-w-3xl mx-auto flex items-center justify-center border-2 border-dashed border-gray-300 mb-2">
-                <span class="text-gray-400 font-mono text-sm text-center px-4"></span>
+            <div class="w-full flex justify-center mb-2 overflow-hidden rounded-xl shadow-sm border border-gray-200 bg-gray-50">
+                <img src="schema lcd.png" alt="Schema LCD Proteus" class="max-w-full h-auto">
             </div>
+            <p class="text-gray-500 text-xs text-center italic mb-10"></p>
         </section>
 
         <!-- 3. Afisarea pas cu pas + Simulare CSS -->
@@ -844,42 +696,50 @@
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 <!-- Pasi de scriere -->
-                <div class="space-y-4">
-                    <p class="text-gray-600 text-sm md:text-base mb-4">Pentru a scrie textul, am trimis pur și simplu codul fiecărei litere în binar, dând câte un impuls pe pinul E.</p>
+                <div class="space-y-6">
                     
-                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm border-l-4 border-l-gray-400">
-                        <strong class="text-gray-800 block text-sm mb-1">Pasul 1: Pornirea</strong>
-                        <p class="text-xs text-gray-600">Cu RS=0, trimitem <strong>1111 0000</strong> ca să aprindem ecranul și cursorul.</p>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm border-l-4 border-l-gray-400">
+                        <strong class="text-gray-800 block text-lg mb-2">1. Inițializarea ecranului</strong>
+                        <p class="text-sm text-gray-600 mb-2">Configurăm ecranul pe modul de 8 biți: <strong>000 0001 1100</strong>, urmat de un impuls la EN (din 0 în 1 și după în 0).</p>
+                        <div class="text-center text-gray-400 font-mono text-xs my-4 bg-gray-50 p-4 rounded border border-gray-100 border-dashed overflow-hidden"></div>
+
+                        <p class="text-sm text-gray-600 mb-2 mt-6 border-t border-gray-100 pt-4">Activăm cursorul: <strong>000 1111 0000</strong>, urmat de un impuls la EN.</p>
+                        <img src="Screenshot_3.png" alt="Schema LCD Proteus" class="max-w-full h-auto">
+                        <div class="text-center text-gray-400 font-mono text-xs my-2 bg-gray-50 p-4 rounded border border-gray-100 border-dashed overflow-hidden"></div>
                     </div>
 
-                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm border-l-4 border-l-brandTeal">
-                        <strong class="text-gray-800 block text-sm mb-1">Pasul 2: Primul rând</strong>
-                        <p class="text-xs text-gray-600 mb-2">Punem RS=1 (mod text) și dăm codurile literelor:</p>
-                        <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-gray-50 p-2 rounded border border-gray-100">
-                            <div>'G' &rarr; 0100 0111</div>
-                            <div>'a' &rarr; 0110 0001</div>
-                            <div>'d' &rarr; 0110 0100</div>
-                            <div>'j' &rarr; 0110 1010</div>
-                            <div>'a' &rarr; 0110 0001</div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm border-l-4 border-l-brandTeal">
+                        <strong class="text-gray-800 block text-lg mb-2">2. Scrierea numelui pe prima linie</strong>
+                        <p class="text-sm text-gray-600 mb-4">Punem RS pe 1 pentru a introduce caractere, și pe porturile D0 – D7 introducem codul caracterului dorit (citit invers din tabel), urmat de un impuls la EN.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-mono bg-gray-50 p-4 rounded border border-gray-100">
+                            <div>G &rarr; <span class="font-bold text-brandTeal">100 1110 0010</span></div>
+                            <div>a &rarr; <span class="font-bold text-brandTeal">100 1000 0110</span></div>
+                            <div>d &rarr; <span class="font-bold text-brandTeal">100 0010 0110</span></div>
+                            <div>j &rarr; <span class="font-bold text-brandTeal">100 0101 0110</span></div>
+                            <div>a &rarr; <span class="font-bold text-brandTeal">100 1000 0110</span></div>
                         </div>
-                        <div class="mt-3 text-[10px] text-gray-400 italic text-center border-t border-gray-100 pt-2">[ Imagine Fig 4. Text prima linie ]</div>
+                        <img src="gadja.png" alt="Schema LCD Proteus" class="max-w-full h-auto">
+                        <div class="text-center text-gray-400 font-mono text-xs mt-6 bg-gray-50 p-4 rounded border border-gray-100 border-dashed overflow-hidden"></div>
                     </div>
 
-                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm border-l-4 border-l-blue-400">
-                        <strong class="text-gray-800 block text-sm mb-1">Pasul 3: Rândul doi</strong>
-                        <p class="text-xs text-gray-600 mb-2">Cu RS=0, mutăm cursorul jos. Apoi punem RS=1 și scriem cifrele:</p>
-                        <div class="grid grid-cols-2 gap-2 text-xs font-mono bg-gray-50 p-2 rounded border border-gray-100">
-                            <div>'2' &rarr; 0011 0010</div>
-                            <div>'1' &rarr; 0011 0001</div>
-                            <div>'3' &rarr; 0011 0011</div>
-                            <div>'1' &rarr; 0011 0001</div>
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm border-l-4 border-l-blue-400">
+                        <strong class="text-gray-800 block text-lg mb-2">3. Trecerea pe linia a doua și scrierea grupei</strong>
+                        <p class="text-sm text-gray-600 mb-4">Pentru a sări pe linia a doua: <strong>000 0000 0011</strong>, urmat de un impuls la EN.</p>
+                        <div class="text-center text-gray-400 font-mono text-xs mb-6 bg-gray-50 p-4 rounded border border-gray-100 border-dashed overflow-hidden">[ Imagine cu cursorul pe linia 2 ]</div>
+
+                        <p class="text-sm text-gray-600 mb-4 border-t border-gray-100 pt-4">Punem RS pe 1 pentru a introduce caractere, și pe porturile D0 – D7 introducem codul, urmat de un impuls la EN.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-mono bg-gray-50 p-4 rounded border border-gray-100">
+                            <div>2 &rarr; <span class="font-bold text-blue-600">100 0100 1100</span></div>
+                            <div>1 &rarr; <span class="font-bold text-blue-600">100 1000 1100</span></div>
+                            <div>3 &rarr; <span class="font-bold text-blue-600">100 1100 1100</span></div>
+                            <div>1 &rarr; <span class="font-bold text-blue-600">100 1000 1100</span></div>
                         </div>
-                        <div class="mt-3 text-[10px] text-gray-400 italic text-center border-t border-gray-100 pt-2">[ Imagine Fig 5. Ecran complet ]</div>
+                        <div class="text-center text-gray-400 font-mono text-xs mt-6 bg-gray-50 p-4 rounded border border-gray-100 border-dashed overflow-hidden">[ Imagine finală cu ambele rânduri ]</div>
                     </div>
                 </div>
 
                 <!-- Ecranul LCD Simulat din CSS -->
-                <div class="flex flex-col items-center justify-center bg-gray-100 p-8 rounded-2xl border border-gray-300 shadow-inner h-full">
+                <div class="flex flex-col items-center justify-center bg-gray-100 p-8 rounded-2xl border border-gray-300 shadow-inner h-fit sticky top-24">
                     <h4 class="text-gray-500 font-bold uppercase text-xs tracking-widest mb-6">Rezultatul pe LCD (Simulare Web)</h4>
                     
                     <div class="lcd-screen w-full max-w-sm rounded-lg p-4 relative overflow-hidden flex flex-col justify-center shadow-lg">
@@ -1001,7 +861,8 @@
             const slider = document.getElementById('sim-temp-slider');
             if(!slider) return;
             const tempInput = parseFloat(slider.value);
-            document.getElementById('sim-temp-val').innerText = tempInput.toFixed(1) + ' °C';
+            const tempValEl = document.getElementById('sim-temp-val');
+            if(tempValEl) tempValEl.innerText = tempInput.toFixed(1) + ' °C';
 
             const FACTOR_LM35 = 0.01;   
             const V_OFFSET = 5.0 * (1 / 101); 
@@ -1017,22 +878,30 @@
             if(adc_dec < 0) adc_dec = 0;
             if(adc_dec > 255) adc_dec = 255;
 
-            document.getElementById('sim-vin-val').innerText = v_in.toFixed(3) + ' V';
-            document.getElementById('sim-vout-val').innerText = v_out.toFixed(2) + ' V';
+            const vinVal = document.getElementById('sim-vin-val');
+            if (vinVal) vinVal.innerText = v_in.toFixed(3) + ' V';
+            
+            const voutVal = document.getElementById('sim-vout-val');
+            if (voutVal) voutVal.innerText = v_out.toFixed(2) + ' V';
 
             let binStr = adc_dec.toString(2).padStart(8, '0');
             let hexStr = adc_dec.toString(16).toUpperCase().padStart(2, '0');
 
-            document.getElementById('sim-bin-val').innerText = binStr;
-            document.getElementById('sim-hex-val').innerText = '0x' + hexStr;
+            const binVal = document.getElementById('sim-bin-val');
+            if (binVal) binVal.innerText = binStr;
+            
+            const hexVal = document.getElementById('sim-hex-val');
+            if (hexVal) hexVal.innerText = '0x' + hexStr;
 
             for (let i = 0; i < 8; i++) {
                 let bit = binStr.charAt(7 - i); 
                 let ledElement = document.getElementById('led-' + i);
-                if (bit === '1') {
-                    ledElement.classList.add('led-on');
-                } else {
-                    ledElement.classList.remove('led-on');
+                if (ledElement) {
+                    if (bit === '1') {
+                        ledElement.classList.add('led-on');
+                    } else {
+                        ledElement.classList.remove('led-on');
+                    }
                 }
             }
         }
